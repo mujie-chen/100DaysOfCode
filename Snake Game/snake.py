@@ -17,12 +17,18 @@ class Snake:
 
     def create_snake(self): # initialising the snake in the starting position, as a method
         for position in STARTING_POSITIONS:
-            new_segment = Turtle(shape="square")
-            new_segment.color("white")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment) # storing in the self.segments list
+            self.add_segment(position)
 
+    def add_segment(self, position):
+        new_segment = Turtle(shape="square")
+        new_segment.color("white")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment) # storing in the self.segments list
+
+    # add_segment is given its own function, so it can be used not just during init but for extension
+    def extend(self):
+        self.add_segment(self.segments[-1].position()) # adds new segment to the last position vacated
 
     def move(self): # initialising the movement logic
         for seg_num in range(len(self.segments) - 1, 0, -1):
