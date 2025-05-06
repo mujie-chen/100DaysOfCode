@@ -53,4 +53,10 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
-        
+    
+    def reset(self): # resetting the game to its initial position, mirroring init; called after collision
+        for seg in self.segments:
+            seg.goto(1000, 1000) # translocate the previous snake to an off-screen dump
+        self.segments.clear() # clear list
+        self.create_snake()
+        self.head = self.segments[0]
