@@ -1,0 +1,4 @@
+amazon | johnappleseed@apple.com | amazing
+apple | johnappleseed@apple.com | bool
+disney | johnappleseed@apple.com | mickey13
+ableton | johnappleseed@apple.com | e!Llj(d28#xV0Viq3
